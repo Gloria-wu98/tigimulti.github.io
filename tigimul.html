@@ -1,0 +1,1135 @@
+{\rtf1\ansi\ansicpg950\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fnil\fcharset136 PingFangTC-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c100000\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww12720\viewh7240\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+<!DOCTYPE html>\
+<html lang="zh-TW">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>Gloria
+\f1 \'a6\'d1\'ae\'76\'aa\'ba\'a5\'78\'bb\'79\'a6\'68\'bc\'d2\'ba\'41\'be\'c7\'b2\'df\'a5\'ad\'a5\'78
+\f0 </title>\
+    <script src="https://cdn.tailwindcss.com"></script>\
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">\
+    <style>\
+        body \{\
+            font-family: 'Noto Sans TC', sans-serif;\
+        \}\
+        .text-glow \{\
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 20px rgba(192, 192, 255, 0.7);\
+        \}\
+        .btn-gradient-blue \{ background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%); \}\
+        .btn-gradient-purple \{ background-image: linear-gradient(to right, #8A2BE2 0%, #DA70D6 100%); \}\
+        .btn-gradient-green \{ background-image: linear-gradient(to right, #34D399 0%, #A7F3D0 100%); \}\
+        .btn-gradient-orange \{ background-image: linear-gradient(to right, #F97316 0%, #FDBA74 100%); \}\
+        .btn-gradient-red \{ background-image: linear-gradient(to right, #EF4444 0%, #F87171 100%); \}\
+        .btn-gradient-pink \{ background-image: linear-gradient(to right, #EC4899 0%, #F9A8D4 100%); \}\
+        .btn-gradient-teal \{ background-image: linear-gradient(to right, #2DD4BF 0%, #6EE7B7 100%); \}\
+        \
+        .card-button \{\
+            transition: all 0.3s ease;\
+            transform: translateY(0);\
+        \}\
+        .card-button:hover \{\
+            transform: translateY(-5px);\
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);\
+        \}\
+        .loader \{\
+            border: 5px solid #f3f3f3;\
+            border-top: 5px solid #8b5cf6;\
+            border-radius: 50%;\
+            width: 50px;\
+            height: 50px;\
+            animation: spin 1s linear infinite;\
+        \}\
+        @keyframes spin \{\
+            0% \{ transform: rotate(0deg); \}\
+            100% \{ transform: rotate(360deg); \}\
+        \}\
+        .modal \{\
+            transition: opacity 0.3s ease;\
+            background-color: rgba(0, 0, 0, 0.6);\
+            backdrop-filter: blur(5px);\
+        \}\
+        .main-card \{\
+            background-color: rgba(255, 255, 255, 0.1);\
+            backdrop-filter: blur(10px);\
+            border: 1px solid rgba(255, 255, 255, 0.2);\
+        \}\
+        .output-card \{\
+             background-color: rgba(255, 255, 255, 0.1);\
+             border: 1px solid rgba(255, 255, 255, 0.2);\
+        \}\
+        #notesTable th, #notesTable td \{\
+            padding: 12px 15px;\
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);\
+            word-break: break-word;\
+        \}\
+        #notesTable th \{\
+            background-color: rgba(30, 41, 59, 0.5);\
+        \}\
+        #notesTable tbody tr:hover \{\
+            background-color: rgba(255, 255, 255, 0.05);\
+        \}\
+        #notesTable td[contenteditable="true"] \{\
+            background-color: rgba(139, 92, 246, 0.2);\
+            outline: 2px solid #8B5CF6;\
+        \}\
+        .option-btn \{\
+            transition: all 0.2s ease-in-out;\
+        \}\
+        .option-btn.selected \{\
+            transform: scale(1.05);\
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.7);\
+            border-color: #EF4444;\
+        \}\
+    </style>\
+</head>\
+<body class="bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900 text-gray-100">\
+\
+    <div class="container mx-auto p-4 md:p-8">\
+        <!-- Header -->\
+        <header class="text-center mb-8">\
+            <h1 class="text-4xl md:text-6xl font-black text-glow mb-2">\
+                Gloria
+\f1 \'a6\'d1\'ae\'76\'aa\'ba\'a5\'78\'bb\'79\'a6\'68\'bc\'d2\'ba\'41\'be\'c7\'b2\'df\'a5\'ad\'a5\'78
+\f0 \
+            </h1>\
+            <p class="text-md md:text-lg text-gray-300">\
+                
+\f1 \'a5\'ad\'a5\'78\'b6\'7d\'b5\'6f\'aa\'cc\'a1\'47
+\f0 Gloria
+\f1 \'a7\'64\'a8\'71\'c4\'f5\'a6\'d1\'ae\'76\'a1\'41
+\f0 Google
+\f1 \'bb\'7b\'c3\'d2\'c1\'bf\'ae\'76\'a1\'41\'ad\'5e\'a4\'e5\'a4\'ce\'a5\'78\'bb\'79\'c2\'f9\'b1\'4d\'aa\'f8\'b1\'d0\'ae\'76
+\f0 \
+            </p>\
+        </header>\
+\
+        <!-- Search and Actions -->\
+        <main class="max-w-5xl mx-auto">\
+            <div class="main-card p-6 rounded-2xl shadow-lg mb-8">\
+                <div class="flex flex-col md:flex-row gap-4 mb-6">\
+                    <input type="text" id="termInput" placeholder="
+\f1 \'bd\'d0\'bf\'e9\'a4\'4a\'a4\'a4\'a4\'e5\'b5\'fc\'b7\'4a
+\f0 ..." class="flex-grow p-4 bg-gray-900/50 border-2 border-transparent focus:border-purple-500 rounded-lg text-lg text-white outline-none transition-all placeholder-gray-400">\
+                </div>\
+\
+                <!-- Action Buttons -->\
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-white font-bold text-center">\
+                    <button id="btnHanzi" class="card-button p-4 rounded-lg shadow-md btn-gradient-blue">
+\f1 \'a5\'78\'bb\'79\'ba\'7e\'a6\'72
+\f0 </button>\
+                    <button id="btnTailo" class="card-button p-4 rounded-lg shadow-md btn-gradient-purple">
+\f1 \'a5\'78\'c3\'b9\'ab\'f7\'ad\'b5
+\f0 </button>\
+                    <button id="btnEnglish" class="card-button p-4 rounded-lg shadow-md btn-gradient-green">
+\f1 \'ad\'5e\'a4\'e5\'b9\'ef\'b7\'d3
+\f0 </button>\
+                    <button id="btnProverb" class="card-button p-4 rounded-lg shadow-md btn-gradient-orange">
+\f1 \'a5\'78\'bb\'79\'ab\'55\'bf\'ce
+\f0 </button>\
+                    <button id="btnImage" class="card-button p-4 rounded-lg shadow-md btn-gradient-red">
+\f1 \'a5\'78\'bb\'79\'ab\'55\'bf\'ce\'a5\'64\'b5\'50
+\f0 </button>\
+                    <button id="btnPodcast" class="card-button p-4 rounded-lg shadow-md btn-gradient-pink">
+\f1 \'c2\'f9\'a4\'48
+\f0 podcast</button>\
+                    <button id="btnNotes" class="card-button p-4 rounded-lg shadow-md btn-gradient-teal col-span-2 lg:col-span-1">
+\f1 \'a7\'da\'aa\'ba\'be\'c7\'b2\'df\'b5\'a7\'b0\'4f
+\f0 </button>\
+                </div>\
+            </div>\
+\
+            <!-- Output Area -->\
+            <div id="outputArea" class="output-card p-6 rounded-2xl shadow-lg min-h-[200px] flex justify-center items-center">\
+                <p id="outputPlaceholder" class="text-gray-400 text-lg">AI
+\f1 \'a5\'cd\'a6\'a8\'b5\'b2\'aa\'47\'b1\'4e\'c5\'e3\'a5\'dc\'a9\'f3\'a6\'b9
+\f0 </p>\
+                <div id="loader" class="loader hidden"></div>\
+                <div id="resultContainer" class="w-full"></div>\
+            </div>\
+        </main>\
+        <footer class="text-center mt-8">\
+            <button id="devLoginBtn" class="text-xs text-gray-600 hover:text-gray-400 transition">
+\f1 \'b6\'7d\'b5\'6f\'aa\'cc\'b5\'6e\'a4\'4a
+\f0 </button>\
+        </footer>\
+    </div>\
+\
+    <!-- Modals -->\
+    <div id="alertModal" class="modal fixed inset-0 flex justify-center items-center hidden z-50">\
+        <div class="bg-gray-800 p-8 rounded-2xl shadow-xl w-11/12 md:w-1/3 text-center border border-purple-500">\
+            <p id="alertMessage" class="text-lg mb-6"></p>\
+            <button id="closeAlertModal" class="p-2 px-6 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition">
+\f1 \'c3\'f6\'b3\'ac
+\f0 </button>\
+        </div>\
+    </div>\
+    \
+    <div id="imageModal" class="modal fixed inset-0 flex justify-center items-center hidden z-50">\
+        <div class="bg-gray-800 p-8 rounded-2xl shadow-xl w-11/12 md:w-2/3 lg:w-1/2 text-white border border-red-500">\
+            <h3 class="text-2xl font-bold mb-8 text-center">
+\f1 \'a5\'78\'bb\'79\'ab\'55\'bf\'ce\'a5\'64\'b5\'50\'b3\'5d\'a9\'77
+\f0 </h3>\
+            <div class="mb-8">\
+                <h4 class="text-lg font-semibold mb-3 text-red-300 text-center">
+\f1 \'bd\'d0\'bf\'ef\'be\'dc\'a5\'64\'b5\'50\'a4\'d8\'a4\'6f
+\f0 </h4>\
+                <div id="imageSizeOptions" class="grid grid-cols-1 md:grid-cols-3 gap-4">\
+                    <button data-value="1:1" class="option-btn size-option p-4 bg-red-600/50 hover:bg-red-600 border-2 border-transparent rounded-lg transition">
+\f1 \'a4\'e8\'a7\'ce
+\f0 </button>\
+                    <button data-value="16:9" class="option-btn size-option p-4 bg-red-600/50 hover:bg-red-600 border-2 border-transparent rounded-lg transition">
+\f1 \'be\'ee\'a6\'a1
+\f0 </button>\
+                    <button data-value="9:16" class="option-btn size-option p-4 bg-red-600/50 hover:bg-red-600 border-2 border-transparent rounded-lg transition">
+\f1 \'aa\'bd\'a6\'a1
+\f0 </button>\
+                </div>\
+            </div>\
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">\
+                 <button id="generateImageBtn" class="p-4 bg-gradient-to-r from-red-500 to-pink-500 text-white rounded-lg transition font-bold text-lg flex-grow shadow-lg hover:scale-105">
+\f1 \'b6\'7d\'a9\'6c\'a5\'cd\'a6\'a8
+\f0 </button>\
+                 <button id="closeImageModal" class="p-4 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition">
+\f1 \'a8\'fa\'ae\'f8
+\f0 </button>\
+            </div>\
+        </div>\
+    </div>\
+\
+    <div id="podcastModal" class="modal fixed inset-0 flex justify-center items-center hidden z-50">\
+        <div class="bg-gray-800 p-8 rounded-2xl shadow-xl w-11/12 md:w-1/3 text-center border border-pink-500">\
+            <h3 class="text-2xl font-bold mb-6">
+\f1 \'bd\'d0\'bf\'ef\'be\'dc\'b8\'7d\'a5\'bb\'bb\'79\'a8\'a5
+\f0 </h3>\
+            <div class="grid grid-cols-1 gap-4">\
+                <button data-lang="
+\f1 \'c1\'63\'c5\'e9\'a4\'a4\'a4\'e5
+\f0 " class="podcast-lang-btn p-3 bg-pink-600 hover:bg-pink-700 text-white rounded-lg transition">
+\f1 \'c1\'63\'c5\'e9\'a4\'a4\'a4\'e5
+\f0 </button>\
+                <button data-lang="
+\f1 \'a5\'78\'bb\'79\'ba\'7e\'a6\'72
+\f0 " class="podcast-lang-btn p-3 bg-pink-600 hover:bg-pink-700 text-white rounded-lg transition">
+\f1 \'a5\'78\'bb\'79\'ba\'7e\'a6\'72
+\f0 </button>\
+                <button data-lang="
+\f1 \'ad\'5e\'a4\'e5
+\f0 " class="podcast-lang-btn p-3 bg-pink-600 hover:bg-pink-700 text-white rounded-lg transition">
+\f1 \'ad\'5e\'a4\'e5
+\f0 </button>\
+            </div>\
+            <button id="closePodcastModal" class="mt-6 text-gray-400 hover:text-white">
+\f1 \'a8\'fa\'ae\'f8
+\f0 </button>\
+        </div>\
+    </div>\
+\
+    <div id="notesModal" class="modal fixed inset-0 flex justify-center items-center hidden z-50">\
+        <div class="bg-gray-800 p-8 rounded-2xl shadow-xl w-11/12 md:w-5/6 text-center border border-teal-500 flex flex-col h-5/6">\
+            <h3 class="text-2xl font-bold mb-4">
+\f1 \'a7\'da\'aa\'ba\'be\'c7\'b2\'df\'b5\'a7\'b0\'4f
+\f0 </h3>\
+            <div id="notesTableContainer" class="flex-grow w-full bg-gray-900/80 rounded-lg overflow-auto">\
+                <table id="notesTable" class="w-full text-left text-sm text-gray-300 table-fixed">\
+                    <thead class="sticky top-0 bg-gray-900/90 backdrop-blur-sm">\
+                        <tr>\
+                            <th class="w-12 px-2 py-3">
+\f1 \'a7\'c7\'b8\'b9
+\f0 </th>\
+                            <th class="w-1/6 px-2 py-3">
+\f1 \'a4\'a4\'a4\'e5\'bf\'e9\'a4\'4a
+\f0 </th>\
+                            <th class="w-1/5 px-2 py-3">
+\f1 \'a5\'78\'bb\'79\'ba\'7e\'a6\'72
+\f0 </th>\
+                            <th class="w-1/5 px-2 py-3">
+\f1 \'a5\'78\'c3\'b9\'ab\'f7\'ad\'b5
+\f0 </th>\
+                            <th class="w-1/5 px-2 py-3">
+\f1 \'ad\'5e\'a4\'e5\'b9\'ef\'b7\'d3
+\f0 </th>\
+                            <th class="w-1/4 px-2 py-3">
+\f1 \'a5\'78\'bb\'79\'ab\'55\'bf\'ce
+\f0 </th>\
+                        </tr>\
+                    </thead>\
+                    <tbody></tbody>\
+                </table>\
+            </div>\
+            <div class="mt-4 flex flex-wrap gap-4 justify-center">\
+                <button id="editNotesBtn" class="p-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition font-bold">
+\f1 \'bd\'73\'bf\'e8
+\f0 </button>\
+                <button id="saveEditedNotesBtn" class="p-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition font-bold hidden">
+\f1 \'c0\'78\'a6\'73\'c5\'dc\'a7\'f3
+\f0 </button>\
+                <button id="downloadNotesBtn" class="p-3 bg-teal-600 hover:bg-teal-700 text-white rounded-lg transition font-bold">
+\f1 \'b5\'a7\'b0\'4f\'a4\'55\'b8\'fc
+\f0  (CSV)</button>\
+                <button id="closeNotesModal" class="p-3 bg-gray-600 hover:bg-gray-700 text-white rounded-lg transition">
+\f1 \'c3\'f6\'b3\'ac
+\f0 </button>\
+            </div>\
+        </div>\
+    </div>\
+    \
+    <div id="devLoginModal" class="modal fixed inset-0 flex justify-center items-center hidden z-50">\
+        <div class="bg-gray-800 p-8 rounded-2xl shadow-xl w-11/12 md:w-1/3 text-center border border-yellow-500">\
+            <h3 class="text-2xl font-bold mb-4">
+\f1 \'b6\'7d\'b5\'6f\'aa\'cc\'b5\'6e\'a4\'4a
+\f0 </h3>\
+            <input type="password" id="devPasswordInput" placeholder="
+\f1 \'bd\'d0\'bf\'e9\'a4\'4a\'b1\'4b\'bd\'58
+\f0 " class="w-full p-3 bg-gray-900 rounded-lg text-white mb-4">\
+            <button id="submitDevPassword" class="w-full p-3 bg-yellow-600 hover:bg-yellow-700 text-white rounded-lg transition font-bold">
+\f1 \'b5\'6e\'a4\'4a
+\f0 </button>\
+        </div>\
+    </div>\
+\
+    <script type="module">\
+        import \{ initializeApp \} from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";\
+        import \{ getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken \} from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";\
+        import \{ getFirestore, doc, setDoc, onSnapshot, updateDoc \} from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";\
+\
+        // --- Firebase Setup ---\
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : \{\};\
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';\
+\
+        let app, auth, db, userId;\
+        let unsubscribeNotes = null;\
+        let isAuthReady = false; \
+\
+        try \{\
+            app = initializeApp(firebaseConfig);\
+            auth = getAuth(app);\
+            db = getFirestore(app);\
+            onAuthStateChanged(auth, async (user) => \{\
+                if (user) \{\
+                    userId = user.uid;\
+                    attachNotesListener();\
+                    isAuthReady = true; \
+                \} else \{\
+                    try \{\
+                        if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) \{\
+                            await signInWithCustomToken(auth, __initial_auth_token);\
+                        \} else \{\
+                            await signInAnonymously(auth);\
+                        \}\
+                    \} catch (e) \{\
+                         await signInAnonymously(auth);\
+                    \} finally \{\
+                        isAuthReady = true;\
+                    \}\
+                \}\
+            \});\
+        \} catch (e) \{\
+            console.error("Firebase initialization failed:", e);\
+            showCustomAlert("
+\f1 \'b5\'4c\'aa\'6b\'b3\'73\'b1\'b5\'a6\'dc\'be\'c7\'b2\'df\'b5\'a7\'b0\'4f\'b8\'ea\'ae\'c6\'ae\'77\'a1\'43
+\f0 ");\
+        \}\
+\
+        // --- Global State ---\
+        let currentGeneratedData = \{\};\
+        let currentPodcastScript = "";\
+        let userNotes = [];\
+        let selectedImageSize = null;\
+        let isDevMode = false;\
+        let isNotesEditing = false;\
+\
+\
+        // --- DOM Elements ---\
+        const termInput = document.getElementById('termInput');\
+        const outputPlaceholder = document.getElementById('outputPlaceholder');\
+        const loader = document.getElementById('loader');\
+        const resultContainer = document.getElementById('resultContainer');\
+        const alertModal = document.getElementById('alertModal');\
+        const imageModal = document.getElementById('imageModal');\
+        const podcastModal = document.getElementById('podcastModal');\
+        const notesModal = document.getElementById('notesModal');\
+        const devLoginModal = document.getElementById('devLoginModal');\
+        \
+        // --- Event Listeners ---\
+        document.getElementById('closeAlertModal').addEventListener('click', () => hideModal(alertModal));\
+        document.getElementById('closeImageModal').addEventListener('click', () => hideModal(imageModal));\
+        document.getElementById('closePodcastModal').addEventListener('click', () => hideModal(podcastModal));\
+        document.getElementById('closeNotesModal').addEventListener('click', () => hideModal(notesModal));\
+        document.getElementById('downloadNotesBtn').addEventListener('click', downloadNotesAsCSV);\
+        document.getElementById('generateImageBtn').addEventListener('click', triggerImageGeneration);\
+        document.getElementById('devLoginBtn').addEventListener('click', () => showModal(devLoginModal));\
+        document.getElementById('submitDevPassword').addEventListener('click', handleDevLogin);\
+        document.getElementById('editNotesBtn').addEventListener('click', toggleNotesEditing);\
+        document.getElementById('saveEditedNotesBtn').addEventListener('click', saveEditedNotes);\
+\
+        document.getElementById('btnHanzi').addEventListener('click', () => handleTextGeneration('
+\f1 \'a5\'78\'bb\'79\'ba\'7e\'a6\'72
+\f0 '));\
+        document.getElementById('btnTailo').addEventListener('click', () => handleTextGeneration('
+\f1 \'a5\'78\'c3\'b9\'ab\'f7\'ad\'b5
+\f0 '));\
+        document.getElementById('btnEnglish').addEventListener('click', () => handleTextGeneration('
+\f1 \'ad\'5e\'a4\'e5\'b9\'ef\'b7\'d3
+\f0 '));\
+        document.getElementById('btnProverb').addEventListener('click', () => handleTextGeneration('
+\f1 \'a5\'78\'bb\'79\'ab\'55\'bf\'ce
+\f0 '));\
+        document.getElementById('btnImage').addEventListener('click', () => showModal(imageModal));\
+        document.getElementById('btnPodcast').addEventListener('click', () => showModal(podcastModal));\
+        document.getElementById('btnNotes').addEventListener('click', () => showModal(notesModal));\
+        \
+        document.querySelectorAll('.podcast-lang-btn').forEach(b => b.addEventListener('click', e => \{\
+            hideModal(podcastModal);\
+            handlePodcastGeneration(e.target.dataset.lang);\
+        \}));\
+\
+        document.querySelectorAll('.size-option').forEach(btn => \{\
+            btn.addEventListener('click', (e) => \{\
+                document.querySelectorAll('.size-option').forEach(b => b.classList.remove('selected'));\
+                e.currentTarget.classList.add('selected');\
+                selectedImageSize = e.currentTarget.dataset.value;\
+            \});\
+        \});\
+\
+        function triggerImageGeneration() \{\
+             if (!selectedImageSize) \{\
+                showCustomAlert("
+\f1 \'bd\'d0\'bf\'ef\'be\'dc\'a5\'64\'b5\'50\'a4\'d8\'a4\'6f\'a1\'49
+\f0 ");\
+                return;\
+            \}\
+            hideModal(imageModal);\
+            handleImageGeneration(selectedImageSize);\
+        \}\
+\
+        // --- Modal Control ---\
+        function showCustomAlert(message) \{\
+            document.getElementById('alertMessage').textContent = message;\
+            showModal(alertModal);\
+        \}\
+\
+        function showModal(modal) \{\
+            if (modal !== alertModal && modal !== notesModal && modal !== devLoginModal && !termInput.value.trim()) \{\
+                showCustomAlert('
+\f1 \'bd\'d0\'a5\'fd\'bf\'e9\'a4\'4a\'a4\'a4\'a4\'e5\'b5\'fc\'b7\'4a\'a1\'49
+\f0 ');\
+                return;\
+            \}\
+            modal.classList.remove('hidden');\
+            setTimeout(() => modal.style.opacity = 1, 10);\
+        \}\
+\
+        function hideModal(modal) \{\
+            modal.style.opacity = 0;\
+            setTimeout(() => modal.classList.add('hidden'), 300);\
+        \}\
+        \
+        // --- Developer Mode ---\
+        function handleDevLogin() \{\
+            const password = document.getElementById('devPasswordInput').value;\
+            if (password === 'gloria9899') \{\
+                isDevMode = true;\
+                hideModal(devLoginModal);\
+                showCustomAlert('
+\f1 \'b6\'7d\'b5\'6f\'aa\'cc\'bc\'d2\'a6\'a1\'a4\'77\'b1\'d2\'a5\'ce\'a1\'49
+\f0 ');\
+            \} else \{\
+                showCustomAlert('
+\f1 \'b1\'4b\'bd\'58\'bf\'f9\'bb\'7e\'a1\'49
+\f0 ');\
+            \}\
+            document.getElementById('devPasswordInput').value = '';\
+        \}\
+        \
+        async function saveDeveloperCorrection(term, type, correction) \{\
+            if (!userId) return;\
+            const devDocRef = doc(db, `artifacts/$\{appId\}/public/data/developer_corrections/$\{term\}`);\
+            try \{\
+                const data = \{ [type]: correction \};\
+                await setDoc(devDocRef, data, \{ merge: true \});\
+                showCustomAlert('
+\f1 \'b6\'7d\'b5\'6f\'aa\'cc\'ab\'d8\'c4\'b3\'a4\'77\'c0\'78\'a6\'73\'a1\'49
+\f0 ');\
+            \} catch (error) \{\
+                console.error("Error saving dev correction:", error);\
+                showCustomAlert(`
+\f1 \'c0\'78\'a6\'73\'b6\'7d\'b5\'6f\'aa\'cc\'ab\'d8\'c4\'b3\'a5\'a2\'b1\'d1
+\f0 : $\{error.message\}`);\
+            \}\
+        \}\
+\
+\
+        // --- Notes (Firestore) Logic ---\
+        function attachNotesListener() \{\
+            if (unsubscribeNotes) unsubscribeNotes();\
+            if (!userId) return;\
+\
+            const notesDocRef = doc(db, `artifacts/$\{appId\}/users/$\{userId\}/notes/main_table`);\
+            unsubscribeNotes = onSnapshot(notesDocRef, (docSnap) => \{\
+                if (docSnap.exists() && docSnap.data().entries) \{\
+                    userNotes = docSnap.data().entries;\
+                \} else \{\
+                    userNotes = [];\
+                \}\
+                renderNotesTable();\
+            \}, (error) => \{\
+                console.error("Error listening to notes:", error);\
+                showCustomAlert("
+\f1 \'b5\'4c\'aa\'6b\'a6\'50\'a8\'42\'be\'c7\'b2\'df\'b5\'a7\'b0\'4f\'a1\'43
+\f0 ");\
+            \});\
+        \}\
+\
+        function renderNotesTable() \{\
+            const tbody = document.querySelector("#notesTable tbody");\
+            tbody.innerHTML = '';\
+            if(!userNotes) return;\
+            userNotes.forEach((entry, index) => \{\
+                const row = tbody.insertRow();\
+                row.setAttribute('data-index', index);\
+                row.innerHTML = `\
+                    <td class="px-2 py-3">$\{entry.id || ''\}</td>\
+                    <td class="px-2 py-3" data-field="chinese">$\{entry.chinese || ''\}</td>\
+                    <td class="px-2 py-3" data-field="hanzi">$\{entry.hanzi || ''\}</td>\
+                    <td class="px-2 py-3" data-field="tailo">$\{entry.tailo || ''\}</td>\
+                    <td class="px-2 py-3" data-field="english">$\{entry.english || ''\}</td>\
+                    <td class="px-2 py-3" data-field="proverb">$\{entry.proverb || ''\}</td>\
+                `;\
+            \});\
+        \}\
+        \
+        function toggleNotesEditing() \{\
+            isNotesEditing = !isNotesEditing;\
+            const tableCells = document.querySelectorAll('#notesTable td[data-field]');\
+            const editBtn = document.getElementById('editNotesBtn');\
+            const saveBtn = document.getElementById('saveEditedNotesBtn');\
+\
+            tableCells.forEach(cell => \{\
+                cell.setAttribute('contenteditable', isNotesEditing);\
+            \});\
+            \
+            if (isNotesEditing) \{\
+                editBtn.textContent = '
+\f1 \'a8\'fa\'ae\'f8\'bd\'73\'bf\'e8
+\f0 ';\
+                saveBtn.classList.remove('hidden');\
+                editBtn.classList.add('bg-gray-600', 'hover:bg-gray-700');\
+                editBtn.classList.remove('bg-purple-600', 'hover:bg-purple-700');\
+            \} else \{\
+                editBtn.textContent = '
+\f1 \'bd\'73\'bf\'e8
+\f0 ';\
+                saveBtn.classList.add('hidden');\
+                editBtn.classList.remove('bg-gray-600', 'hover:bg-gray-700');\
+                editBtn.classList.add('bg-purple-600', 'hover:bg-purple-700');\
+                renderNotesTable(); // Re-render to discard unsaved changes\
+            \}\
+        \}\
+\
+        async function saveEditedNotes() \{\
+            const rows = document.querySelectorAll('#notesTable tbody tr');\
+            rows.forEach(row => \{\
+                const index = parseInt(row.dataset.index);\
+                const cells = row.querySelectorAll('td[data-field]');\
+                cells.forEach(cell => \{\
+                    const field = cell.dataset.field;\
+                    userNotes[index][field] = cell.innerText;\
+                \});\
+            \});\
+            await saveNotesToFirestore();\
+            toggleNotesEditing(); // Exit editing mode\
+        \}\
+\
+        async function saveCurrentDataToNotes() \{\
+            if (!userId) return;\
+            if (!currentGeneratedData.term) return;\
+\
+            const term = currentGeneratedData.term;\
+            const existingIndex = userNotes.findIndex(note => note.chinese === term);\
+\
+            if (existingIndex > -1) \{\
+                Object.assign(userNotes[existingIndex], \{\
+                    hanzi: currentGeneratedData.hanzi || userNotes[existingIndex].hanzi,\
+                    tailo: currentGeneratedData.tailo || userNotes[existingIndex].tailo,\
+                    english: currentGeneratedData.english || userNotes[existingIndex].english,\
+                    proverb: currentGeneratedData.proverb || userNotes[existingIndex].proverb,\
+                \});\
+            \} else \{\
+                const newId = userNotes.length > 0 ? Math.max(...userNotes.map(n => n.id || 0)) + 1 : 1;\
+                userNotes.push(\{\
+                    id: newId,\
+                    chinese: term,\
+                    hanzi: currentGeneratedData.hanzi || '',\
+                    tailo: currentGeneratedData.tailo || '',\
+                    english: currentGeneratedData.english || '',\
+                    proverb: currentGeneratedData.proverb || '',\
+                \});\
+            \}\
+            await saveNotesToFirestore();\
+        \}\
+\
+        async function saveNotesToFirestore() \{\
+            if (!userId) return;\
+            const notesDocRef = doc(db, `artifacts/$\{appId\}/users/$\{userId\}/notes/main_table`);\
+            try \{\
+                await setDoc(notesDocRef, \{ entries: userNotes \});\
+                showCustomAlert("
+\f1 \'b5\'a7\'b0\'4f\'a4\'77\'a7\'f3\'b7\'73\'a1\'49
+\f0 ");\
+                renderNotesTable();\
+            \} catch (error) \{\
+                showCustomAlert("
+\f1 \'c0\'78\'a6\'73\'b5\'a7\'b0\'4f\'a5\'a2\'b1\'d1\'a1\'43
+\f0 ");\
+            \}\
+        \}\
+\
+        function downloadNotesAsCSV() \{\
+            if (userNotes.length === 0) return;\
+            const headers = ["
+\f1 \'a7\'c7\'b8\'b9
+\f0 ", "
+\f1 \'a4\'a4\'a4\'e5\'bf\'e9\'a4\'4a
+\f0 ", "
+\f1 \'a5\'78\'bb\'79\'ba\'7e\'a6\'72
+\f0 ", "
+\f1 \'a5\'78\'c3\'b9\'ab\'f7\'ad\'b5
+\f0 ", "
+\f1 \'ad\'5e\'a4\'e5\'b9\'ef\'b7\'d3
+\f0 ", "
+\f1 \'a5\'78\'bb\'79\'ab\'55\'bf\'ce
+\f0 "];\
+            const keys = ["id", "chinese", "hanzi", "tailo", "english", "proverb"];\
+            let csvContent = "\\uFEFF" + headers.join(",") + "\\n"; \
+            userNotes.forEach(entry => \{\
+                const row = keys.map(key => `"$\{(entry[key] || '').toString().replace(/"/g, '""')\}"`);\
+                csvContent += row.join(",") + "\\n";\
+            \});\
+            window.downloadText(csvContent, 'gloria_learning_notes.csv', 'text/csv;charset=utf-8;');\
+        \}\
+\
+        // --- Core Logic Functions ---\
+        function showLoader() \{\
+            outputPlaceholder.classList.add('hidden');\
+            resultContainer.innerHTML = '';\
+            loader.classList.remove('hidden');\
+        \}\
+\
+        function hideLoader() \{\
+            loader.classList.add('hidden');\
+        \}\
+        \
+        function getTerm() \{\
+            const term = termInput.value.trim();\
+            if (!term) \{\
+                showCustomAlert('
+\f1 \'bd\'d0\'a5\'fd\'bf\'e9\'a4\'4a\'a4\'a4\'a4\'e5\'b5\'fc\'b7\'4a\'a1\'49
+\f0 ');\
+                return null;\
+            \}\
+            if (term !== currentGeneratedData.term) \{\
+                currentGeneratedData = \{ term: term \};\
+            \}\
+            return term;\
+        \}\
+\
+        function displayResult(htmlContent, resultData = \{\}) \{\
+            hideLoader();\
+            resultContainer.innerHTML = htmlContent;\
+            \
+            if (resultData.isTextBased) \{\
+                const wrapper = document.createElement('div');\
+                wrapper.className = 'text-center mt-4 space-x-4';\
+                \
+                const saveButton = document.createElement('button');\
+                saveButton.textContent = '
+\f1 \'c0\'78\'a6\'73\'a6\'dc\'b5\'a7\'b0\'4f
+\f0 ';\
+                saveButton.className = 'p-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition font-bold';\
+                saveButton.onclick = saveCurrentDataToNotes;\
+                wrapper.appendChild(saveButton);\
+\
+                if (isDevMode && (resultData.type === '
+\f1 \'a5\'78\'bb\'79\'ba\'7e\'a6\'72
+\f0 ' || resultData.type === '
+\f1 \'a5\'78\'c3\'b9\'ab\'f7\'ad\'b5
+\f0 ' || resultData.type === '
+\f1 \'a5\'78\'bb\'79\'ab\'55\'bf\'ce
+\f0 ')) \{\
+                    const devSaveBtn = document.createElement('button');\
+                    devSaveBtn.textContent = '
+\f1 \'c0\'78\'a6\'73\'b6\'7d\'b5\'6f\'aa\'cc\'ab\'d8\'c4\'b3
+\f0 ';\
+                    devSaveBtn.className = 'p-3 bg-yellow-600 hover:bg-yellow-700 text-white rounded-lg transition font-bold';\
+                    devSaveBtn.onclick = () => \{\
+                        const correctedText = resultContainer.querySelector('[data-editable]').value;\
+                        const termToSave = (resultData.type === '
+\f1 \'a5\'78\'bb\'79\'ab\'55\'bf\'ce
+\f0 ' || resultData.type === '
+\f1 \'a5\'78\'c3\'b9\'ab\'f7\'ad\'b5
+\f0 ') ? currentGeneratedData.hanzi : currentGeneratedData.term;\
+                        saveDeveloperCorrection(termToSave, resultData.dataKey, correctedText);\
+                    \};\
+                    wrapper.appendChild(devSaveBtn);\
+                \}\
+                resultContainer.appendChild(wrapper);\
+            \}\
+        \}\
+        \
+        function displayError(message) \{\
+            hideLoader();\
+            resultContainer.innerHTML = `<p class="text-red-400 text-center">$\{message\}</p>`;\
+        \}\
+        \
+        async function callGeminiAPI(prompt) \{\
+            if (!isAuthReady || !auth.currentUser) \{ \
+                showCustomAlert("
+\f1 \'c0\'b3\'a5\'ce\'b5\'7b\'a6\'a1\'a5\'bf\'a6\'62\'aa\'ec\'a9\'6c\'a4\'c6\'a9\'ce\'c5\'e7\'c3\'d2\'a5\'a2\'b1\'d1\'a1\'41\'bd\'d0\'b5\'79\'ad\'d4\'a6\'41\'b8\'d5\'a1\'43
+\f0 ");\
+                return null;\
+            \}\
+            const apiKey = "";\
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=$\{apiKey\}`;\
+            const payload = \{ contents: [\{ role: "user", parts: [\{ text: prompt \}] \}] \};\
+\
+            try \{\
+                const response = await fetch(apiUrl, \{ method: 'POST', headers: \{ 'Content-Type': 'application/json' \}, body: JSON.stringify(payload) \});\
+                if (!response.ok) throw new Error(`API 
+\f1 \'bd\'d0\'a8\'44\'a5\'a2\'b1\'d1\'a1\'41\'aa\'ac\'ba\'41\'bd\'58\'a1\'47
+\f0  $\{response.status\}`);\
+                const result = await response.json();\
+                if (result.candidates && result.candidates[0].content && result.candidates[0].content.parts[0]) \{\
+                     return result.candidates[0].content.parts[0].text;\
+                \} else \{ throw new Error('
+\f1 \'b1\'71
+\f0 API
+\f1 \'a6\'ac\'a8\'ec\'aa\'ba\'a6\'5e\'c0\'b3\'ae\'e6\'a6\'a1\'b5\'4c\'ae\'c4\'a1\'43
+\f0 '); \}\
+            \} catch (error) \{\
+                console.error("Gemini API Error:", error);\
+                displayError(`
+\f1 \'b5\'4c\'aa\'6b\'a5\'cd\'a6\'a8\'a4\'ba\'ae\'65\'a1\'41\'bd\'d0\'b5\'79\'ab\'e1\'a6\'41\'b8\'d5\'a1\'43\'bf\'f9\'bb\'7e\'a1\'47
+\f0 $\{error.message\}`);\
+                return null;\
+            \}\
+        \}\
+        \
+        async function getHanziForTerm(term)\{\
+            if (currentGeneratedData.hanzi) return currentGeneratedData.hanzi;\
+            \
+            displayResult('<p class="text-center text-gray-300">
+\f1 \'a5\'bf\'a6\'62\'ac\'b0\'b1\'7a\'ac\'64\'b8\'df\'a5\'78\'bb\'79\'ba\'7e\'a6\'72
+\f0 ...</p>');\
+            const hanziPrompt = `
+\f1 \'bd\'d0\'b4\'a3\'a8\'d1\'a1\'75
+\f0 $\{term\}
+\f1 \'a1\'76\'b3\'6f\'ad\'d3\'a4\'a4\'a4\'e5\'b5\'fc\'b7\'4a\'b9\'ef\'c0\'b3\'aa\'ba\'a5\'78\'bb\'79\'ba\'7e\'a6\'72\'a1\'41\'a5\'75\'ad\'6e\'ba\'7e\'a6\'72\'a5\'bb\'a8\'ad\'a1\'41\'a4\'a3\'ad\'6e\'a5\'5d\'a7\'74\'a8\'e4\'a5\'4c\'bb\'a1\'a9\'fa\'a1\'43
+\f0 `;\
+            const hanzi = await callGeminiAPI(hanziPrompt);\
+            if(hanzi)\{\
+                currentGeneratedData.hanzi = hanzi.trim();\
+                return currentGeneratedData.hanzi;\
+            \}\
+            return null;\
+        \}\
+\
+        async function handleTextGeneration(type) \{\
+            const term = getTerm();\
+            if (!term) return;\
+            showLoader();\
+\
+            if (type === '
+\f1 \'a5\'78\'c3\'b9\'ab\'f7\'ad\'b5
+\f0 ' || type === '
+\f1 \'a5\'78\'bb\'79\'ab\'55\'bf\'ce
+\f0 ') \{\
+                const hanzi = await getHanziForTerm(term);\
+                if (!hanzi) \{\
+                    displayError("
+\f1 \'b5\'4c\'aa\'6b\'c0\'f2\'a8\'fa\'a5\'78\'bb\'79\'ba\'7e\'a6\'72\'a1\'41\'a6\'5d\'a6\'b9\'b5\'4c\'aa\'6b\'c4\'7e\'c4\'f2\'ac\'64\'b8\'df\'a1\'43
+\f0 ");\
+                    return;\
+                \}\
+                \
+                showLoader();\
+                let title, prompt, dataKey;\
+\
+                if(type === '
+\f1 \'a5\'78\'c3\'b9\'ab\'f7\'ad\'b5
+\f0 ') \{\
+                    title = `
+\f1 \'a1\'75
+\f0 $\{hanzi\}
+\f1 \'a1\'76\'aa\'ba\'a5\'78\'c3\'b9\'ab\'f7\'ad\'b5
+\f0 `;\
+                    prompt = `
+\f1 \'bd\'d0\'b4\'a3\'a8\'d1\'a5\'78\'bb\'79\'b5\'fc\'b7\'4a\'a1\'75
+\f0 $\{hanzi\}
+\f1 \'a1\'76\'b9\'ef\'c0\'b3\'aa\'ba\'a5\'78\'c3\'b9\'ab\'f7\'ad\'b5\'a1\'41\'a5\'75\'ad\'6e\'ab\'f7\'ad\'b5\'a5\'bb\'a8\'ad\'a1\'41\'a4\'a3\'ad\'6e\'a5\'5d\'a7\'74\'a8\'e4\'a5\'4c\'bb\'a1\'a9\'fa\'a1\'43
+\f0 `;\
+                    dataKey = 'tailo';\
+                \} else \{ // 
+\f1 \'a5\'78\'bb\'79\'ab\'55\'bf\'ce
+\f0 \
+                    title = `
+\f1 \'bb\'50\'a1\'75
+\f0 $\{hanzi\}
+\f1 \'a1\'76\'ac\'db\'c3\'f6\'aa\'ba\'a5\'78\'bb\'79\'ab\'55\'bf\'ce
+\f0 `;\
+                    prompt = `
+\f1 \'bd\'d0\'b4\'a3\'a8\'d1\'a4\'40\'a5\'79\'a5\'5d\'a7\'74\'a5\'78\'bb\'79\'b5\'fc\'b7\'4a\'a1\'75
+\f0 $\{hanzi\}
+\f1 \'a1\'76\'aa\'ba\'ab\'55\'bf\'ce\'a1\'41\'a8\'c3\'aa\'fe\'a4\'57\'a8\'e4\'a7\'b9\'be\'e3\'aa\'ba\'c1\'63\'c5\'e9\'a4\'a4\'a4\'e5\'b8\'d1\'c4\'c0\'a1\'43
+\f0 `;\
+                    dataKey = 'proverb';\
+                \}\
+\
+                const resultText = await callGeminiAPI(prompt);\
+                if(resultText)\{\
+                    currentGeneratedData[dataKey] = resultText.trim();\
+                    const editableContent = isDevMode \
+                        ? `<textarea data-editable="true" class="w-full h-24 p-2 bg-gray-900 text-center text-lg md:text-xl rounded">$\{resultText.trim()\}</textarea>`\
+                        : `<p class="text-lg md:text-xl whitespace-pre-wrap">$\{resultText.trim().replace(/\\\\n/g, '<br>')\}</p>`;\
+\
+                    const resultHtml = `\
+                        <div class="text-center p-4 bg-gray-800/50 rounded-lg">\
+                            <h3 class="text-xl md:text-2xl font-bold text-purple-400 mb-3">$\{title\}</h3>\
+                            $\{editableContent\}\
+                        </div>`;\
+                    displayResult(resultHtml, \{ isTextBased: true, type: type, dataKey: dataKey \});\
+                \}\
+                return;\
+            \}\
+            \
+            let prompt, title, dataKey;\
+            switch(type) \{\
+                case '
+\f1 \'a5\'78\'bb\'79\'ba\'7e\'a6\'72
+\f0 ':\
+                    title = `
+\f1 \'a1\'75
+\f0 $\{term\}
+\f1 \'a1\'76\'aa\'ba\'a5\'78\'bb\'79\'ba\'7e\'a6\'72
+\f0 `;\
+                    prompt = `
+\f1 \'bd\'d0\'b4\'a3\'a8\'d1\'a1\'75
+\f0 $\{term\}
+\f1 \'a1\'76\'b3\'6f\'ad\'d3\'a4\'a4\'a4\'e5\'b5\'fc\'b7\'4a\'b9\'ef\'c0\'b3\'aa\'ba\'a5\'78\'bb\'79\'ba\'7e\'a6\'72\'a1\'41\'a5\'75\'ad\'6e\'ba\'7e\'a6\'72\'a5\'bb\'a8\'ad\'a1\'41\'a4\'a3\'ad\'6e\'a5\'5d\'a7\'74\'a8\'e4\'a5\'4c\'bb\'a1\'a9\'fa\'a1\'43
+\f0 `;\
+                    dataKey = 'hanzi';\
+                    break;\
+                case '
+\f1 \'ad\'5e\'a4\'e5\'b9\'ef\'b7\'d3
+\f0 ':\
+                    title = `
+\f1 \'a1\'75
+\f0 $\{term\}
+\f1 \'a1\'76\'aa\'ba\'ad\'5e\'a4\'e5\'b9\'ef\'b7\'d3
+\f0 `;\
+                    prompt = `
+\f1 \'bd\'d0\'b4\'a3\'a8\'d1\'a1\'75
+\f0 $\{term\}
+\f1 \'a1\'76\'b3\'6f\'ad\'d3\'a4\'a4\'a4\'e5\'b5\'fc\'b7\'4a\'b3\'cc\'b6\'4b\'a4\'c1\'aa\'ba\'ad\'5e\'a4\'e5\'c2\'bd\'c4\'b6\'a1\'41\'a5\'75\'ad\'6e\'ad\'5e\'a4\'e5\'a5\'bb\'a8\'ad\'a1\'41\'a4\'a3\'ad\'6e\'a5\'5d\'a7\'74\'a8\'e4\'a5\'4c\'bb\'a1\'a9\'fa\'a1\'43
+\f0 `;\
+                    dataKey = 'english';\
+                    break;\
+            \}\
+            \
+            const resultText = await callGeminiAPI(prompt);\
+            if (resultText) \{\
+                currentGeneratedData[dataKey] = resultText.trim();\
+                const editableContent = isDevMode && dataKey === 'hanzi'\
+                    ? `<input type="text" data-editable="true" value="$\{resultText.trim()\}" class="w-full p-2 bg-gray-900 text-center text-lg md:text-xl rounded">`\
+                    : `<p class="text-lg md:text-xl whitespace-pre-wrap">$\{resultText.trim().replace(/\\\\n/g, '<br>')\}</p>`;\
+\
+                const resultHtml = `\
+                    <div class="text-center p-4 bg-gray-800/50 rounded-lg">\
+                        <h3 class="text-xl md:text-2xl font-bold text-purple-400 mb-3">$\{title\}</h3>\
+                        $\{editableContent\}\
+                    </div>`;\
+                displayResult(resultHtml, \{ isTextBased: true, type: type, dataKey: dataKey \});\
+            \}\
+        \}\
+\
+        async function getProverbForImage(term) \{\
+            const hanzi = await getHanziForTerm(term);\
+            if (!hanzi) return null;\
+\
+            const prompt = `
+\f1 \'bd\'d0\'a5\'75\'b4\'a3\'a8\'d1\'a4\'40\'a5\'79\'bb\'50\'a5\'78\'bb\'79\'b5\'fc\'b7\'4a\'a1\'75
+\f0 $\{hanzi\}
+\f1 \'a1\'76\'ac\'db\'c3\'f6\'aa\'ba\'b3\'cc\'b8\'67\'a8\'e5\'aa\'ba\'ab\'55\'bf\'ce\'a1\'41\'a5\'75\'ad\'6e\'ab\'55\'bf\'ce\'a5\'bb\'a8\'ad\'a1\'41\'a4\'a3\'ad\'6e\'a5\'5d\'a7\'74\'a5\'f4\'a6\'f3\'b8\'d1\'c4\'c0\'a1\'42\'a4\'de\'b8\'b9\'a9\'ce\'a6\'68\'be\'6c\'aa\'ba\'a4\'e5\'a6\'72\'a1\'43
+\f0 `;\
+            const proverb = await callGeminiAPI(prompt);\
+            return proverb ? proverb.trim() : null;\
+        \}\
+\
+        async function handleImageGeneration(size) \{\
+            const term = getTerm();\
+            if (!term) return;\
+            showLoader();\
+\
+            displayResult('<p class="text-center text-gray-300">
+\f1 \'a5\'bf\'a6\'62\'ac\'b0\'b1\'7a\'b4\'4d\'a7\'e4\'ac\'db\'c3\'f6\'aa\'ba\'a5\'78\'bb\'79\'ab\'55\'bf\'ce
+\f0 ...</p>');\
+            const proverb = await getProverbForImage(term);\
+            if (!proverb) \{\
+                displayError("
+\f1 \'b5\'4c\'aa\'6b\'c0\'f2\'a8\'fa\'ac\'db\'c3\'f6\'aa\'ba\'a5\'78\'bb\'79\'ab\'55\'bf\'ce\'a8\'d3\'a5\'cd\'a6\'a8\'b9\'cf\'a4\'f9\'a1\'43\'bd\'d0\'b4\'ab\'ad\'d3\'b5\'fc\'b7\'4a\'b8\'d5\'b8\'d5\'a1\'43
+\f0 ");\
+                return;\
+            \}\
+            \
+            showLoader();\
+            const style = "3D
+\f1 \'a5\'64\'b3\'71\'ad\'b7\'ae\'e6
+\f0 ";\
+            let imagePrompt = `
+\f1 \'a4\'40\'b1\'69\'b4\'79\'c3\'b8\'a5\'78\'bb\'79\'ab\'55\'bf\'ce\'a1\'75
+\f0 $\{proverb\}
+\f1 \'a1\'76\'b7\'4e\'b9\'d2\'aa\'ba\'ad\'49\'b4\'ba\'b9\'cf\'a1\'41\'ad\'b7\'ae\'e6\'ac\'b0
+\f0 $\{style\}
+\f1 \'a1\'41\'b5\'65\'ad\'b1\'ba\'63\'b9\'cf\'c2\'b2\'bc\'e4\'a1\'41\'af\'64\'a6\'b3\'aa\'c5\'b6\'a1\'a5\'69\'a5\'48\'a9\'f1\'b8\'6d\'a4\'e5\'a6\'72\'a1\'43
+\f0 `;\
+            \
+            const payload = \{ instances: [\{ prompt: imagePrompt \}], parameters: \{ "sampleCount": 1 \}\};\
+            if(size !== 'comic') payload.parameters.aspectRatio = size;\
+            \
+            const apiKey = "";\
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/imagen-3.0-generate-002:predict?key=$\{apiKey\}`;\
+\
+            try \{\
+                const response = await fetch(apiUrl, \{ method: 'POST', headers: \{ 'Content-Type': 'application/json' \}, body: JSON.stringify(payload) \});\
+                if (!response.ok) throw new Error(`API 
+\f1 \'bd\'d0\'a8\'44\'a5\'a2\'b1\'d1\'a1\'41\'aa\'ac\'ba\'41\'bd\'58\'a1\'47
+\f0  $\{response.status\}`);\
+                const result = await response.json();\
+                if (result.predictions && result.predictions[0].bytesBase64Encoded) \{\
+                    const imageUrl = `data:image/png;base64,$\{result.predictions[0].bytesBase64Encoded\}`;\
+                    \
+                    const canvas = document.createElement('canvas');\
+                    const ctx = canvas.getContext('2d');\
+                    const img = new Image();\
+                    img.onload = () => \{\
+                        let canvasWidth, canvasHeight;\
+                        const [w, h] = size.split(':').map(Number);\
+                        canvasWidth = 1024;\
+                        canvasHeight = canvasWidth * (h/w);\
+                        canvas.width = canvasWidth;\
+                        canvas.height = canvasHeight;\
+\
+                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);\
+                        \
+                        ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';\
+                        const textBgHeight = canvas.height * 0.3;\
+                        ctx.fillRect(0, canvas.height - textBgHeight, canvas.width, textBgHeight);\
+                        \
+                        ctx.font = `bold $\{canvas.width / 20\}px 'Noto Sans TC'`;\
+                        ctx.fillStyle = 'white';\
+                        ctx.textAlign = 'center';\
+                        ctx.textBaseline = 'middle';\
+                        \
+                        const maxLineWidth = canvas.width * 0.9;\
+                        const lines = [];\
+                        let currentLine = '';\
+                        const words = proverb.split('');\
+                        for(let word of words) \{\
+                            const testLine = currentLine + word;\
+                            const metrics = ctx.measureText(testLine);\
+                            if(metrics.width > maxLineWidth && currentLine.length > 0)\{\
+                                lines.push(currentLine);\
+                                currentLine = word;\
+                            \} else \{\
+                                currentLine = testLine;\
+                            \}\
+                        \}\
+                        lines.push(currentLine);\
+\
+                        const lineHeight = canvas.width / 18;\
+                        const startY = (canvas.height - textBgHeight) + (textBgHeight / 2) - ((lines.length - 1) * lineHeight / 2);\
+\
+                        lines.forEach((line, index) => \{\
+                            ctx.fillText(line, canvas.width / 2, startY + index * lineHeight);\
+                        \});\
+\
+                        const finalImage = canvas.toDataURL();\
+                        const resultHtml = `\
+                            <div class="text-center">\
+                                <h3 class="text-2xl font-bold mb-4">
+\f1 \'a5\'78\'bb\'79\'ab\'55\'bf\'ce\'a5\'64\'b5\'50
+\f0 </h3>\
+                                <p class="text-lg text-yellow-300 mb-2 font-semibold">
+\f1 \'a1\'75
+\f0 $\{proverb\}
+\f1 \'a1\'76
+\f0 </p>\
+                                <img src="$\{finalImage\}" alt="AI
+\f1 \'ac\'b0\'ab\'55\'bf\'ce
+\f0 '$\{proverb\}'
+\f1 \'a5\'cd\'a6\'a8\'aa\'ba\'a5\'64\'b5\'50
+\f0 " class="max-w-full h-auto mx-auto rounded-lg shadow-lg mb-4">\
+                                <button onclick="window.downloadImage('$\{finalImage\}', '$\{proverb\}')" class="p-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition font-bold">
+\f1 \'a4\'55\'b8\'fc\'a5\'64\'b5\'50
+\f0 </button>\
+                            </div>`;\
+                        displayResult(resultHtml);\
+                    \};\
+                    img.onerror = () => displayError("
+\f1 \'b5\'4c\'aa\'6b\'b8\'fc\'a4\'4a\'a5\'cd\'a6\'a8\'aa\'ba\'ad\'49\'b4\'ba\'b9\'cf\'a4\'f9\'a1\'43
+\f0 ");\
+                    img.src = imageUrl;\
+\
+                \} else \{ throw new Error('
+\f1 \'b1\'71
+\f0 API
+\f1 \'a6\'ac\'a8\'ec\'aa\'ba\'b9\'cf\'a4\'f9\'a6\'5e\'c0\'b3\'ae\'e6\'a6\'a1\'b5\'4c\'ae\'c4\'a1\'43
+\f0 ');\}\
+            \} catch (error) \{\
+                displayError(`
+\f1 \'b5\'4c\'aa\'6b\'a5\'cd\'a6\'a8\'b9\'cf\'a4\'f9\'a1\'41\'bd\'d0\'b5\'79\'ab\'e1\'a6\'41\'b8\'d5\'a1\'43\'bf\'f9\'bb\'7e\'a1\'47
+\f0 $\{error.message\}`);\
+            \}\
+        \}\
+        \
+        async function handlePodcastGeneration(lang) \{\
+            const term = getTerm();\
+            if (!term) return;\
+            showLoader();\
+            \
+            const proverb = await getProverbForImage(term);\
+            if (!proverb) \{\
+                displayError("
+\f1 \'b5\'4c\'aa\'6b\'c0\'f2\'a8\'fa\'ac\'db\'c3\'f6\'aa\'ba\'a5\'78\'bb\'79\'ab\'55\'bf\'ce\'a8\'d3\'a5\'cd\'a6\'a8
+\f0  Podcast
+\f1 \'a1\'43\'bd\'d0\'b4\'ab\'ad\'d3\'b5\'fc\'b7\'4a\'b8\'d5\'b8\'d5\'a1\'43
+\f0 ");\
+                return;\
+            \}\
+            const fileName = proverb.replace(/[ ,
+\f1 \'a1\'41\'a1\'43
+\f0 ]/g, '_') + '-podcast.txt';\
+\
+            const prompt = `
+\f1 \'bd\'d0\'ac\'b0\'a7\'da\'a5\'cd\'a6\'a8\'a4\'40\'ac\'71\'c2\'f9\'a4\'48
+\f0 Podcast
+\f1 \'b8\'7d\'a5\'bb\'a1\'41\'a5\'48\'a5\'78\'bb\'79\'ab\'55\'bf\'ce\'a1\'75
+\f0 $\{proverb\}
+\f1 \'a1\'76\'ac\'b0\'a5\'44\'c3\'44\'b6\'69\'a6\'e6\'b2\'60\'ab\'d7\'b0\'51\'bd\'d7\'a1\'43
+\f0 \
+            
+\f1 \'ae\'e6\'a6\'a1\'ad\'6e\'a8\'44\'a6\'70\'a4\'55\'a1\'47
+\f0 \
+            1. 
+\f1 \'c0\'48\'be\'f7\'ab\'fc\'ac\'a3\'a8\'e2\'a6\'ec\'a5\'44\'ab\'f9\'a4\'48\'a1\'41\'a4\'40\'a8\'6b\'a4\'40\'a4\'6b\'a1\'41\'a8\'c3\'ac\'b0\'a5\'4c\'ad\'cc\'a8\'fa\'b1\'60\'a8\'a3\'aa\'ba\'a5\'78\'c6\'57\'a6\'57\'a6\'72
+\f0  (
+\f1 \'a8\'d2\'a6\'70
+\f0 : 
+\f1 \'aa\'fc\'a9\'fa\'a1\'42\'ac\'4b\'aa\'e1\'a1\'42\'a7\'d3\'a9\'fa\'a1\'42\'b6\'ae\'b4\'40
+\f0  
+\f1 \'b5\'a5
+\f0 )
+\f1 \'a1\'43
+\f0 \
+            2. 
+\f1 \'bd\'d0
+\f0 **
+\f1 \'c4\'59\'ae\'e6
+\f0 **
+\f1 \'a8\'cf\'a5\'ce\'a1\'75
+\f0 **
+\f1 \'a5\'44\'ab\'f9\'a4\'48\'a6\'57\'a6\'72
+\f0 **: (
+\f1 \'b9\'ef\'b8\'dc\'a4\'ba\'ae\'65
+\f0 )
+\f1 \'a1\'76\'aa\'ba\'ae\'e6\'a6\'a1\'a7\'65\'b2\'7b\'a8\'43\'a4\'40\'a5\'79\'b9\'ef\'b8\'dc\'a1\'41\'a6\'57\'a6\'72\'a5\'b2\'b6\'b7\'a5\'ce\'a8\'e2\'ad\'d3\'ac\'50\'b8\'b9\'a5\'5d\'b3\'f2\'a1\'43
+\f0 \
+            3. 
+\f1 \'b9\'ef\'b8\'dc\'a4\'ba\'ae\'65\'a5\'b2\'b6\'b7\'ac\'4f
+\f0 **$\{lang\}**
+\f1 \'a1\'43
+\f0 \
+            4. 
+\f1 \'a8\'e2\'a4\'48\'bd\'fc\'ac\'79\'b5\'6f\'a8\'a5\'a1\'41\'b9\'ef\'b8\'dc\'ad\'6e\'a6\'db\'b5\'4d\'a1\'42\'a6\'b3\'bd\'ec\'a1\'41\'a8\'c3\'b2\'60\'a4\'4a\'b2\'4c\'a5\'58\'a6\'61\'b8\'d1\'c4\'c0\'ab\'55\'bf\'ce\'aa\'ba\'b7\'4e\'b8\'71\'a9\'4d\'a5\'cd\'ac\'a1\'a4\'a4\'aa\'ba\'c0\'b3\'a5\'ce\'a1\'43
+\f0 \
+            5. 
+\f1 \'b8\'7d\'a5\'bb\'a4\'ba\'ae\'65\'a5\'b2\'b6\'b7\'ba\'f2\'a6\'a9\'a1\'75
+\f0 $\{proverb\}
+\f1 \'a1\'76\'b3\'6f\'ad\'d3\'a5\'44\'c3\'44\'a1\'43
+\f0 \
+            6. 
+\f1 \'a4\'a3\'ad\'6e\'a8\'cf\'a5\'ce
+\f0  [SPEAKER A] 
+\f1 \'a9\'ce
+\f0  [SPEAKER B] 
+\f1 \'bc\'d0\'c5\'d2\'a1\'43
+\f0 `;\
+            \
+            let resultText = await callGeminiAPI(prompt);\
+            if (resultText) \{\
+                 currentPodcastScript = resultText; // Store raw text for download\
+                 const formattedHtml = resultText.replace(/\\*\\*(.*?)\\*\\*:/g, '<strong class="text-pink-400">$1</strong>:');\
+                 const resultHtml = `\
+                    <div class="text-left">\
+                        <h3 class="text-2xl font-bold mb-4 text-center">
+\f1 \'c2\'f9\'a4\'48
+\f0  Podcast 
+\f1 \'b8\'7d\'a5\'bb
+\f0  ($\{lang\})
+\f1 \'a1\'47\'a1\'75
+\f0 $\{proverb\}
+\f1 \'a1\'76
+\f0 </h3>\
+                        <div class="bg-gray-900/80 p-4 rounded-lg whitespace-pre-wrap font-mono text-sm h-64 overflow-y-auto">$\{formattedHtml\}</div>\
+                        <div class="text-center mt-4">\
+                            <button onclick="window.downloadCurrentPodcastScript('$\{fileName\}')" class="p-3 bg-green-600 hover:bg-green-700 text-white rounded-lg transition font-bold">
+\f1 \'a4\'e5\'a5\'bb\'a4\'55\'b8\'fc
+\f0 </button>\
+                        </div>\
+                    </div>`;\
+                displayResult(resultHtml);\
+            \}\
+        \}\
+\
+        // --- Utility Functions ---\
+        window.downloadImage = function(url, filename) \{\
+            const a = document.createElement('a');\
+            a.href = url;\
+            a.download = `$\{filename\}.png`;\
+            document.body.appendChild(a);\
+            a.click();\
+            document.body.removeChild(a);\
+        \}\
+        \
+        window.downloadText = function(text, filename, mimeType = 'text/plain;charset=utf-8') \{\
+            const blob = new Blob([text], \{ type: mimeType \});\
+            const url = URL.createObjectURL(blob);\
+            const a = document.createElement('a');\
+            a.href = url;\
+            a.download = filename;\
+            document.body.appendChild(a);\
+            a.click();\
+            document.body.removeChild(a);\
+            URL.revokeObjectURL(url);\
+        \}\
+\
+        window.downloadCurrentPodcastScript = function(filename) \{\
+            if(currentPodcastScript) \{\
+                const cleanText = currentPodcastScript.replace(/\\*\\*/g, '');\
+                window.downloadText(cleanText, filename);\
+            \}\
+        \}\
+\
+    </script>\
+</body>\
+</html>\
+\
+}
